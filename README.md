@@ -1,4 +1,3 @@
-CSharp-Console-Application-Runner
-=================================
+This repo gives a runner for C# console applications. It can be used in end-to-end tests for C# console applications, where the program can be passed input data and the runner then returns the program output. This is done by running the console application in a process and redirecting standard input and standard output. This runner therefore allows true end-to-end testing of a C# console application within a test suite.
 
-C# Console Application Runner
+The console application runner needs to be instantiated with the class name of the console application program, i.e. the class containing the Main() method for the console application, and a string for the name of the console application executable file.
