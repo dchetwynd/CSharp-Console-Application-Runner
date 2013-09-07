@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -17,7 +18,7 @@ namespace ConsoleApplicationRunner
             _applicationExecutableName = applicationExecutableName;
         }
 
-        public string RunApplicationWithInputs(string[] applicationInputLines)
+        public string[] RunApplicationWithInputs(string[] applicationInputLines)
         {
             string applicationExecutablePath = GetApplicationExecutablePath(_applicationType, _applicationExecutableName);
 
@@ -25,16 +26,21 @@ namespace ConsoleApplicationRunner
             applicationProcess.Start();
 
             WriteApplicationInputs(applicationProcess, applicationInputLines);
-            string applicationOutputs = ReadApplicationOutputs(applicationProcess);
-
-            return applicationOutputs;
+            return ReadApplicationOutputs(applicationProcess);
         }
 
-        private static string ReadApplicationOutputs(Process applicationProcess)
+        private static string[] ReadApplicationOutputs(Process applicationProcess)
         {
             StreamReader outputReader = applicationProcess.StandardOutput;
             applicationProcess.WaitForExit();
-            return outputReader.ReadToEnd();
+            string totalApplicationOutput = ReplaceLineEndings(outputReader.ReadToEnd());
+            
+            return totalApplicationOutput.Split(new[] {"\n"}, StringSplitOptions.RemoveEmptyEntries);
+        }
+
+        private static string ReplaceLineEndings(string originalString)
+        {
+            return Regex.Replace(originalString, "\r\n", "\n");
         }
 
         private static void WriteApplicationInputs(Process applicationProcess, string[] applicationInputLines)

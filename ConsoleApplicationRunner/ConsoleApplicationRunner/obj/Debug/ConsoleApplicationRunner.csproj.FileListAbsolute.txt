@@ -1,0 +1,5 @@
+C:\Users\myob\Documents\GitHub\CSharp-Console-Application-Runner\ConsoleApplicationRunner\ConsoleApplicationRunner\obj\Debug\ConsoleApplicationRunner.csprojResolveAssemblyReference.cache
+C:\Users\myob\Documents\GitHub\CSharp-Console-Application-Runner\ConsoleApplicationRunner\ConsoleApplicationRunner\bin\Debug\ConsoleApplicationRunner.dll
+C:\Users\myob\Documents\GitHub\CSharp-Console-Application-Runner\ConsoleApplicationRunner\ConsoleApplicationRunner\bin\Debug\ConsoleApplicationRunner.pdb
+C:\Users\myob\Documents\GitHub\CSharp-Console-Application-Runner\ConsoleApplicationRunner\ConsoleApplicationRunner\obj\Debug\ConsoleApplicationRunner.dll
+C:\Users\myob\Documents\GitHub\CSharp-Console-Application-Runner\ConsoleApplicationRunner\ConsoleApplicationRunner\obj\Debug\ConsoleApplicationRunner.pdb
